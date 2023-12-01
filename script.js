@@ -1,9 +1,10 @@
 let resultsContainer = document.getElementsByClassName("container")[0]
 let searchInput = document.getElementById("searchInput")
 
+const spaceRegex = /^\s*$/;
 const validateInput = (el) =>
 {
-    if (el.value === "") {
+    if (spaceRegex.test(el.value)) {
         resultsContainer.innerHTML = "<p>Type something in the above search input</p>"
     } else {
         generateResults(el.value)
